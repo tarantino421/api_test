@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Marker</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      const placeId = "ChIJ_3KJ7FxBXj4R_l7-pFSYWI8"; // Place ID клініки
+      const apiKey = "AIzaSyBbSqZQxaCT4cGXdNsQITE9fy2RiqhoMdk"; // Твій API-ключ
+      const apiUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
+
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data.result.reviews);
+          // Обробка відгуків, наприклад, відображення їх на сайті
+        })
+        .catch((error) => console.error("Error:", error));
+    </script>
+  </body>
+</html>
